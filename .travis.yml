@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "16.13.1"
+install:
+- npm install newman
+before_script:
+  node --version
+  npm --version
+  node_module/.bin/newman --version 
+script:
+- node_module/.bin/newman run test/Google.postman_collection.json
